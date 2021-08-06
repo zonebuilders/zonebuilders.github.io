@@ -1,0 +1,120 @@
+---
+title: "Zonebuilders"
+subtitle: "Cross-platform and language-agnostic tools for generating zoning systems for urban analysis and modelling "  
+author: "Robin Lovelace, Martijn Tennekes, Dustin Carlino, FOSS4G 2021"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r, eval=FALSE, echo=FALSE}
+# see slides manually uploaded online: https://slopes-slides.netlify.app/slides.html#1
+# to run these slides locally:
+xaringan::inf_mr("data-raw/slides.Rmd")
+```
+
+```{r xaringanExtra, echo=FALSE}
+# From https://github.com/gadenbuie/xaringanExtra
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+```
+
+
+```{r setup, include=FALSE}
+library(tmap)
+library(tidyverse)
+tmap_mode("view")
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  # cache = TRUE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  fig.show = TRUE,
+  hiline = TRUE
+)
+```
+
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  link_color = "blue",
+  title_slide_background_color = "#FFFFFF",
+  title_slide_background_size = "100%",
+  title_slide_background_image = "zb_buenos_aires.png",
+  title_slide_background_position = "bottom",
+  title_slide_text_color = "#080808",
+  primary_color = "#080808",
+  secondary_color = "#FF961C",
+  inverse_header_color = "#FFFFFF"
+)
+```
+
+---
+
+.left-column[
+
+# Why?
+
+- Every city has a different zoning system
+- Need for consistency when doing inter-city comparisons
+- Need for a general solution
+- Existing 'zone-building' systems start with 'basic statistical units' (BSUs)
+- Fun FOSS programming challenge!
+
+]
+
+--
+
+.right-column[
+
+## Available zones are often arbitrary
+
+```{r, fig.height=6}
+u = "https://geodata.lib.berkeley.edu/download/file/nyu-2451-34202-geojson.json"
+f = "buenos_aires_official_zones.geojson"
+# download.file(u, f)
+zones_ba = sf::read_sf(f)
+tm_shape(zones_ba) +
+  tm_borders(lwd = 9) +
+  tm_basemap(server = leaflet::providers$OpenStreetMap) +
+  tm_scale_bar()
+```
+
+
+]
+
+???
+
+# Contents:
+
+## Why slopes?
+
+## Key functions
+
+## Future plans
+
+
+---
+
+
+# Thanks
+
+- Stephan Hügel and the GeoRust community for support with the Rust code
+- The broadly defined R-Spatial community for making the R package possible
+
+## Links
+
+- [Paper](https://zonebuilders.github.io/zonebuilder/articles/paper.html) describing the ClockBoard zoning system, implemented with zonebuilders
+- [zonebuilder R package](https://zonebuilders.github.io/zonebuilder) for building zones in R
+- [zonebuilder Rust crate](https://crates.io/crates/zonebuilder) for building zones in Rust/anywhere 
+- [zonebuilder web app](https://zonebuilders.github.io/zonebuilder-rust) for building zones in your browser
