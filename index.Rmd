@@ -59,8 +59,6 @@ style_duo_accent(
 )
 ```
 
----
-
 .left-column[
 
 # Why?
@@ -90,19 +88,85 @@ tm_shape(zones_ba) +
   tm_scale_bar()
 ```
 
-
 ]
 
 ???
 
-# Contents:
+- Contents: ...
 
-## Why slopes?
+<!-- --- -->
 
-## Key functions
+<!-- # Early prototypes -->
 
-## Future plans
+---
 
+#### Application: communicating and navigating city locations
+
+![](https://zonebuilders.github.io/zonebuilder/articles/navigation.png)
+???
+
+ Illustration of how the ClockBoard system could be used to describe the approximate location of places. In this hypothetical example, someone is describing key places to visit in and around Leeds to someone who arrives at the train station in zone A, visits the city’s famous Roundhay Park in zone C01, before travelling for an evening meal in Bradford, in zone E09. 
+ 
+---
+
+## Application: exploring city scale data
+
+![](https://zonebuilders.github.io/zonebuilder/articles/paper_files/figure-html/cityscale-1.png)
+
+
+---
+
+#### Application: inter-city comparisons
+
+![](https://zonebuilders.github.io/zonebuilder/articles/paper_files/figure-html/intercity-1.png)
+
+---
+
+# Using the ZoneBuilder software
+
+<!-- --- -->
+
+<!-- ## With the R package -->
+
+
+<!-- --- -->
+
+<!-- ## With the Rust crate -->
+
+
+---
+
+## In your web browser 🤯
+
+
+![](https://user-images.githubusercontent.com/1825120/128574211-c593377a-f7a9-44d7-b984-2857d8538a3f.gif)
+
+---
+
+# Next steps
+
+.pull-left[
+
+## Conceptually
+
+- How much can the ClockBoard concept catch on?
+- What alternative zoning systems can be imagined/created?
+- How to design a zoning system incorporating multiple city centres?
+
+]
+
+.pull-right[
+
+## Technologically
+
+- Fix any outstanding bugs in R and Rust implementations
+- Add features to R and Rust implemenations
+- Zonebuilder implementations in other languages
+  - Python, JavaScript, Julia, Go? Great geo learning exercise.
+  - Interfaces to the Rust implementation, e.g. via [rextendr](https://github.com/extendr/rextendr) R package and the [pyo3](https://github.com/PyO3/pyo3) Python package
+- Create standard zones ready to be used for major cities worldwide
+
+]
 
 ---
 
@@ -111,6 +175,7 @@ tm_shape(zones_ba) +
 
 - Stephan Hügel and the GeoRust community for support with the Rust code
 - The broadly defined R-Spatial community for making the R package possible
+- The OSGEO community and developers for making solid open source software possible
 
 ## Links
 
