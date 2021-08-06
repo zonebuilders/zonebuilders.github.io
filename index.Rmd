@@ -118,3 +118,4 @@ tm_shape(zones_ba) +
 - [zonebuilder R package](https://zonebuilders.github.io/zonebuilder) for building zones in R
 - [zonebuilder Rust crate](https://crates.io/crates/zonebuilder) for building zones in Rust/anywhere 
 - [zonebuilder web app](https://zonebuilders.github.io/zonebuilder-rust) for building zones in your browser
+- [Reproducible source code](https://github.com/zonebuilders/zonebuilders.github.io/blob/master/index.Rmd)  of these slides (and the software) on GitHub
