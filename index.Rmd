@@ -115,7 +115,7 @@ tm_shape(zones_ba) +
 ---
 
 
-background-image: url(https://github-releases.githubusercontent.com/227241094/6b48a2fe-e474-4063-9c8a-8fa2f1855594?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210922%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210922T214054Z&X-Amz-Expires=300&X-Amz-Signature=17d166ce09de781035404bcf795a9f81297abc0f586ea2eab1f90905a8f52846&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=227241094&response-content-disposition=attachment%3B%20filename%3Dcities_p1.png&response-content-type=application%2Foctet-stream)
+background-image: url(https://github.com/zonebuilders/zonebuilder/releases/download/v0.0.2.9000/cities_p1.png)
 background-position: center
 background-size: contain
 
@@ -136,19 +136,39 @@ background-size: contain
 
 # Using the ZoneBuilder software
 
-<!-- --- -->
+---
+## With the R package
 
-<!-- ## With the R package -->
+---
 
+## With the Rust crate
 
-<!-- --- -->
+### See https://github.com/zonebuilders/zonebuilder-rust
 
-<!-- ## With the Rust crate -->
+Install Rust + cargo
 
+```bash
+cargo install zonebuilder
+```
+
+See the help with:
+
+```{r, engine='bash', echo=TRUE}
+zonebuilder -h
+```
+
+---
+
+## With the Python package or QGIS plugin
+
+--
+
+# Watch this space
 
 ---
 
 ## In your web browser 🤯
+
 
 
 ![](https://user-images.githubusercontent.com/1825120/128574211-c593377a-f7a9-44d7-b984-2857d8538a3f.gif)
