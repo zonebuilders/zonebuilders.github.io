@@ -125,19 +125,94 @@ background-size: contain
 
 #### comparisons
 
+#### population
+
 ---
 
 background-image: url(https://zonebuilders.github.io/zonebuilder/articles/paper_files/figure-html/intercity-1.png)
 background-size: contain
 
-#### Application: inter-city comparisons
+#### Application: inter-city comparisons: urban phenomena
 
 ---
 
 # Using the ZoneBuilder software
 
+.pull-left[
+
+```{r, echo=TRUE}
+library(zonebuilder)
+z = zb_zone(
+  "Buenos Aires",
+  n_circles = 9
+  )
+```
+
+```{r, eval=FALSE, echo=TRUE, out.height=9}
+library(tmap)
+tmap_mode("view")
+tm_shape(z) +
+  tm_borders() +
+  tm_basemap(leaflet::providers$OpenStreetMap) +
+  tm_scale_bar()
+```
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+library(tmap)
+tmap_mode("view")
+tm_shape(z) +
+  tm_borders() +
+  tm_basemap(leaflet::providers$OpenStreetMap) +
+  tm_scale_bar()
+```
+
+
+]
+
+
 ---
 ## With the R package
+
+
+You can install the released version of zonebuilder from [CRAN](https://CRAN.R-project.org) with:
+
+```{r, eval=FALSE, echo=TRUE}
+install.packages("zonebuilder")
+```
+
+Install it from [GitHub](https://github.com/) with:
+
+```{r install-gh, eval=FALSE, echo=TRUE}
+# install.packages("remotes")
+remotes::install_github("zonebuilders/zonebuilder")
+```
+
+```{r, echo=TRUE}
+library(zonebuilder)
+library(tmap)
+tm_shape(london_a()) + tm_borders() + tm_shape(london_c()) + tm_dots("red")
+```
+
+---
+
+## Create zones in one command
+
+```{r, echo=TRUE}
+london_zones <- zb_zone(london_c(), london_a())
+zb_plot(london_zones)
+```
+
+---
+
+# Output the results
+
+```{r, echo=TRUE, eval=FALSE}
+sf::write_sf(london_zones, "london_zones.geojson")
+```
 
 ---
 
@@ -159,19 +234,53 @@ zonebuilder -h
 
 ---
 
+## Minimal Rust example
+
+.pull-left[
+
+```{r, engine='bash', echo=TRUE}
+zonebuilder -s 3 -d 1.0,3.0 > zones.geojson
+cat zones.geojson
+```
+
+]
+
+.pull-right[
+
+![](https://raw.githubusercontent.com/zonebuilders/zonebuilder-rust/main/README_files/figure-gfm/unnamed-chunk-4-1.png)
+
+]
+
+
+---
+
 ## With the Python package or QGIS plugin
+
+![](https://user-images.githubusercontent.com/1825120/134435030-b2b499c1-f493-4815-b3cd-edeb17cc4eb8.png)
 
 --
 
-# Watch this space
+See https://github.com/zonebuilders/zonebuilder/issues/41
+
+???
+
+Let us know if you'd like to get involved!
+
 
 ---
 
 ## In your web browser 🤯
 
 
-
 ![](https://user-images.githubusercontent.com/1825120/128574211-c593377a-f7a9-44d7-b984-2857d8538a3f.gif)
+
+---
+
+# The ClockBoard paper
+
+- Preprint paper on the ClockBoard zoning system. See https://doi.org/10.31219/osf.io/vncgw for details
+
+![](https://user-images.githubusercontent.com/1825120/134436781-104cacf7-926c-4506-9162-9982533bc206.png)
 
 ---
 
