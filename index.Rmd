@@ -14,9 +14,8 @@ output:
 ---
 
 ```{r, eval=FALSE, echo=FALSE}
-# see slides manually uploaded online: https://slopes-slides.netlify.app/slides.html#1
 # to run these slides locally:
-xaringan::inf_mr("data-raw/slides.Rmd")
+xaringan::inf_mr("index.Rmd")
 ```
 
 ```{r xaringanExtra, echo=FALSE}
@@ -113,12 +112,25 @@ tm_shape(zones_ba) +
 
 ![](https://zonebuilders.github.io/zonebuilder/articles/paper_files/figure-html/cityscale-1.png)
 
+---
+
+
+background-image: url(https://github-releases.githubusercontent.com/227241094/6b48a2fe-e474-4063-9c8a-8fa2f1855594?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210922%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210922T214054Z&X-Amz-Expires=300&X-Amz-Signature=17d166ce09de781035404bcf795a9f81297abc0f586ea2eab1f90905a8f52846&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=227241094&response-content-disposition=attachment%3B%20filename%3Dcities_p1.png&response-content-type=application%2Foctet-stream)
+background-position: center
+background-size: contain
+
+--
+
+#### Inter-city
+
+#### comparisons
 
 ---
 
-#### Application: inter-city comparisons
+background-image: url(https://zonebuilders.github.io/zonebuilder/articles/paper_files/figure-html/intercity-1.png)
+background-size: contain
 
-![](https://zonebuilders.github.io/zonebuilder/articles/paper_files/figure-html/intercity-1.png)
+#### Application: inter-city comparisons
 
 ---
 
