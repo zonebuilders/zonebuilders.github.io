@@ -25,9 +25,6 @@ xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 
 
 ```{r setup, include=FALSE}
-library(tmap)
-library(tidyverse)
-tmap_mode("view")
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
   fig.width=9, fig.height=3.5, fig.retina=3,
@@ -40,8 +37,6 @@ knitr::opts_chunk$set(
   hiline = TRUE
 )
 ```
-
-
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
@@ -57,6 +52,44 @@ style_duo_accent(
   inverse_header_color = "#FFFFFF"
 )
 ```
+
+## About us
+
+.left-column[
+
+
+```{r, echo=TRUE}
+# Reproducible
+# R code
+# Install pkgs...
+library(tmap)
+library(tidyverse)
+tmap_mode("view")
+people = c("Robin", "Martijn", "Dustin")
+location = c("Leeds, UK", "Rotterdam, Holland", "Seattle, USA")
+year = c(2019, 2019, 2020)
+people_locations = tmaptools::geocode_OSM(location, as.sf = TRUE)
+people_data_frame = data.frame(people, location, year)
+people_sf = sf::st_sf(people_data_frame, geometry = people_locations$point)
+zones = purrr::map_dfr(location, zonebuilder::zb_zone)
+m = tm_shape(zones) +
+  tm_borders() +
+  tm_text("label", col = "grey") +
+  tm_shape(people_sf) +
+  tm_text("people", scale = 2)
+```
+
+]
+
+.right-column[
+
+```{r, out.height=500}
+m
+```
+
+]
+
+---
 
 .left-column[
 
